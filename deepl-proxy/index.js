@@ -1,7 +1,7 @@
 // deepl-proxy/index.js
 const express = require('express');
 const cors = require('cors');
-// benutze das globale fetch von Node 18+ ODER hole es default aus node-fetch
+// Node 18+ hat global fetch, ansonsten node-fetch:
 const fetch = require('node-fetch').default;
 require('dotenv').config();
 
@@ -15,7 +15,13 @@ if (!DEEPL_KEY) {
   process.exit(1);
 }
 
+// Standard-URL für Free-Account
 const DEEPL_URL = 'https://api-free.deepl.com/v2/translate';
+
+// Health-Check für Uptime-Pings
+app.get('/healthz', (_req, res) => {
+  res.send('ok');
+});
 
 app.post('/translate', async (req, res) => {
   try {
@@ -42,7 +48,7 @@ app.post('/translate', async (req, res) => {
   }
 });
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`DeepL-Proxy läuft auf http://localhost:${PORT}`);
 });
