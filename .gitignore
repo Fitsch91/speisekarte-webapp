@@ -1,0 +1,4 @@
+# alle Node-Abhängigkeiten nicht versionieren
+node_modules/
+# Next- oder CRA-Cache (falls verwendet)
+.cache/
