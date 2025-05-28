@@ -1,0 +1,6 @@
+.form { max-width: 600px; margin: 2rem auto; background: #fff; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.color-bar { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.editable { min-height: 2.5rem; padding: 0.5rem; border: 1px solid #ccc; margin-bottom: 1rem; }
+.form label { font-weight: 500; margin-top: 0.75rem; display: block; }
+.form input, .form select { width: 100%; padding: 0.5rem; margin-top: 0.3rem; border: 1px solid #ccc; border-radius: 0.25rem; }
+.form button { margin-top: 1rem; padding: 0.6rem 1.2rem; border: none; border-radius: 0.3rem; background: #27ae60; color: white; cursor: pointer; }

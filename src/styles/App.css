@@ -1,0 +1,45 @@
+.entry-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.entry-form label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.entry-form input,
+.entry-form select,
+.entry-form .editable {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.color-buttons {
+  margin: 0.5rem 0 1rem;
+}
+
+.color-buttons button {
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.color-buttons button.green { background: #cfe8cf; }
+.color-buttons button.brown { background: #d4b8a8; }
+.color-buttons button.black { background: #ccc; }
+
+.editable {
+  min-height: 2.5rem;
+  cursor: text;
+}

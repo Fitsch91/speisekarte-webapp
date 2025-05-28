@@ -1,0 +1,61 @@
+/* src/components/Pdf.css */
+
+/* Container um die gesamte PDF-Export-Ansicht */
+.pdf-export {
+  padding: 1rem;
+}
+
+/* Button-Container (Zurück + Download) */
+.pdf-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Gemeinsame Button-Stile */
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-family: Papyrus, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Zurück-Button */
+.btn-back {
+  background: #555;
+  color: #fff;
+}
+.btn-back:hover {
+  background: #333;
+}
+
+/* Herunterladen-Button */
+.btn-download {
+  background: #27ae60;
+  color: #fff;
+}
+.btn-download:hover {
+  background: #1e8449;
+}
+.btn-download:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* Container für den eingebetteten PDFViewer */
+.pdf-viewer-container {
+  margin-top: 1rem;
+  /* Höhe anpassen: z. B. Viewport minus Header/Footer */
+  height: calc(100vh - 200px);
+  border: 1px solid #ccc;
+}
+
+/* Styles für den PDFViewer selbst */
+.pdf-viewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

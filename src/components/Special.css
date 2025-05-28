@@ -1,0 +1,60 @@
+.special-menu-section {
+  margin-top: 3rem;
+  padding: 1rem;
+  border: 2px solid #f39c12;
+  border-radius: 0.5rem;
+  background: #fcf3cf;
+}
+
+.special-config {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+
+.special-config label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.special-config input[type="text"],
+.special-config input[type="number"] {
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  width: 160px;
+}
+
+.lang-toggles {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lang-toggles label {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.download-special {
+  padding: 0.5rem 1rem;
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.special-list {
+  list-style: none;
+  padding: 0;
+}
+
+.special-item {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #e1b12c;
+}
