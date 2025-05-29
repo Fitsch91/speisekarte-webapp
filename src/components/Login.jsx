@@ -1,5 +1,6 @@
 // src/components/Login.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import './Login.css';
 
@@ -7,6 +8,7 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignIn = async () => {
     setLoading(true);
@@ -15,8 +17,8 @@ export default function Login() {
     if (error) {
       alert(error.message);
     } else {
-      // Redirect auf deine Live-App
-      window.location.href = 'https://speisekarte-webapp-1.onrender.com/';
+      // Nach erfolgreichem Login zurück zur Übersichtsseite
+      navigate('/', { replace: true });
     }
   };
 

@@ -2,30 +2,62 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-   <!-- Base-URL damit React-Router auf /export etc. funktioniert -->
-   <base href="/" />
-   <!-- Fonts preloaden -->
-   <link
-     rel="preload"
-     href="https://speisekarte-webapp-1.onrender.com/fonts/Papyrus.ttf"
-     as="font"
-     type="font/ttf"
-     crossorigin
-   />
-   <link
-     rel="preload"
-     href="https://speisekarte-webapp-1.onrender.com//fonts/PapyrusB.ttf"
-     as="font"
-     type="font/ttf"
-     crossorigin
-   />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
     <title>Speisekarte Webapp</title>
+
+    <!-- Base URL for React Router -->
+    <base href="/" />
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Theme color for Android -->
+    <meta name="theme-color" content="#27ae60" />
+
+    <!-- iOS support -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/icons/icon-192.png"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <!-- Preload fonts -->
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Papyrus.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/PapyrusB.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+
+    <!-- Safari pinned tab icon -->
+    <link
+      rel="mask-icon"
+      href="%PUBLIC_URL%/icons/icon-192.png"
+      color="#27ae60"
+    />
   </head>
   <body>
     <noscript>Du brauchst JavaScript, damit diese App funktioniert.</noscript>
     <div id="root"></div>
-    <!-- CRA injiziert hier automatisch dein gebündeltes JavaScript -->
+    <!-- React Scripts werden hier eingebunden -->
   </body>
-</html> 
+</html>
