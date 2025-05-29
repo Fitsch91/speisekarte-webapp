@@ -1,5 +1,5 @@
 // src/components/Login.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import './Login.css';
@@ -10,6 +10,13 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // **Neu**: falls schon eingeloggt, direkt weiterleiten
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session) navigate('/', { replace: true });
+    });
+  }, [navigate]);
+
   const handleSignIn = async () => {
     setLoading(true);
     const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -17,7 +24,6 @@ export default function Login() {
     if (error) {
       alert(error.message);
     } else {
-      // Nach erfolgreichem Login zurück zur Übersichtsseite
       navigate('/', { replace: true });
     }
   };
