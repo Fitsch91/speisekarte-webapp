@@ -16,7 +16,9 @@ import './Pdf.css';
 
 // Fonts registrieren
 Font.register({ family: 'Papyrus', src: `${window.location.origin}/fonts/Papyrus.ttf` });
+format: 'truetype'
 Font.register({ family: 'Papyrus-Bold', src: `${window.location.origin}/fonts/PapyrusB.ttf` });
+format: 'truetype'
 
 // Kategorien-Reihenfolge
 const CATEGORY_ORDER = [
