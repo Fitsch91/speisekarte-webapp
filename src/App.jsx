@@ -1,7 +1,9 @@
 // src/App.jsx
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { supabase } from './supabaseClient';
 import NavBar from './components/NavBar';
+import Login from './components/Login';
 import DishList from './components/DishList';
 import EntryForm from './components/EntryForm';
 import EditForm from './components/EditForm';
@@ -10,6 +12,33 @@ import PdfPreview from './components/PdfPreview';
 import SpecialPreview from './components/SpecialPreview';
 
 export default function App() {
+  const [session, setSession] = useState(null);
+
+  useEffect(() => {
+    // initial session check
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session);
+    });
+    // listener for auth changes
+    const { data: listener } = supabase.auth.onAuthStateChange((_, s) => {
+      setSession(s);
+    });
+    return () => {
+      listener.subscription.unsubscribe();
+    };
+  }, []);
+
+  // if not logged in, show only the login route
+  if (!session) {
+    return (
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    );
+  }
+
+  // logged in: show the app
   return (
     <>
       <NavBar />
